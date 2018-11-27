@@ -1,0 +1,20 @@
+@media screen and (max-width: 768px) {
+	.bx-core-adm-dialog-content {
+		width: 100% !important;
+	}
+	.bx-auth-services {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	div.bx-auth-services div {
+		width: unset;
+		float: none;
+		margin: 4px 0 0 0;
+	}
+	.bx-core-adm-dialog {
+		top: 10% !important;
+		left: 0 !important;
+	}
+}
+
