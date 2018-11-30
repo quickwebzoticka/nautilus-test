@@ -5086,7 +5086,7 @@ li.fancybox-thumbs-loading
 .menu
   position: fixed
   top: 97px
-  background: #d3cec2
+  background-color: #ede8da
   -webkit-box-shadow: 0px 13px 30px 0px rgba(35, 31, 32, 0.2)
   box-shadow: 0px 13px 30px 0px rgba(35, 31, 32, 0.2)
   padding: 20px 15px 35px
@@ -5188,7 +5188,7 @@ li.fancybox-thumbs-loading
 
 @media screen and (max-width: 768px)
   .menu__main
-    background: #d3cec2
+    background: #ede8da
     left: -20px
     position: relative
 
@@ -6605,6 +6605,30 @@ li.fancybox-thumbs-loading
     -webkit-align-items: center
     -ms-flex-align: center
     align-items: center
+    transform: translateY(0%)
+    opacity: 1
+  &.slideUp
+    animation: slideUp 0.5s
+    animation-fill-mode: both
+  &.slideDownReturn
+    animation: slideDownReturn 0.5s
+    animation-fill-mode: both
+
+@keyframes slideUp
+  0%
+    transform: translateY(0%)
+    opacity: 1
+  100%
+    transform: translateY(-100%)
+    opacity: 0
+
+@keyframes slideDownReturn
+  0%
+    transform: translateY(100%)
+    opacity: 0
+  100%
+    transform: translateY(0%)
+    opacity: 1
 
 @media screen and (max-width: 768px)
   .tabs-content__block
@@ -6935,7 +6959,7 @@ li.fancybox-thumbs-loading
   align-self: stretch
   .first-slider-arrows__next
     position: absolute
-    bottom: -30px
+    bottom: 30px
     left: 50%
     -webkit-transform: translate(-50%) rotate(90deg)
     -ms-transform: translate(-50%) rotate(90deg)
@@ -7990,6 +8014,11 @@ li.fancybox-thumbs-loading
   .tabs-ip-list__wrap
     .slick-slide
       height: 180px
+
+@media screen and (max-width: 1500px)
+  .tabs-ip-list
+    .first-slider-arrows__next
+      bottom: -30px
 
 @media screen and (max-width: 1255px)
   .tabs-ip-list

@@ -63,7 +63,7 @@ function tabs(limiter){
     $(document).on('click', '[data-tab-link]:not(.active)', function() {
         $(this)
             .addClass('active').siblings().removeClass('active')
-            .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+            .closest('div.tabs').find('div.tabs__content').removeClass('active slideDownReturn').addClass('slideUp').eq($(this).index()).removeClass('slideUp').addClass('active slideDownReturn');
         let curElementContentBlock = $(this).closest('div.tabs').find('div.tabs__content').eq($(this).index());
             if (curElementContentBlock.find('.slick-slider').length > 0){
                 console.log(curElementContentBlock.find('.slick-slider'));
