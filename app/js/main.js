@@ -105,7 +105,7 @@ function allClics(limiter){
     $(document).on('click', '.menu__link', function(){
         let menu = $(this).parents('.menu');
         if(menu.hasClass('active')){
-            $(document).find('.wrapper-disable').remove(); 
+            $(document).find('.wrapper-disable').remove();
             menu.find('.hamburger').removeClass('is-active');
             menu.removeClass('active');
             menu.find('.menu__link span').toggle('slide');
@@ -123,11 +123,11 @@ function allClics(limiter){
             $(document).find('.wrapper-disable').remove();
             setTimeout(function(){
                 formMain.removeClass('active');
-            }, 1000)
+            }, 300)
         } else {
-            formMain.removeClass('fadeOutRight')
+            formMain.removeClass('fadeOutRight');
             formMain.addClass('active fadeInRight');
-            $(document).find('.main-content').prepend('<div class="wrapper-disable"></div>')
+            $(document).find('.main-content').prepend('<div class="wrapper-disable"></div>');
         }
         return false;
     });
