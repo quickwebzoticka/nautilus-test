@@ -77,8 +77,9 @@ function allClics(limiter){
     if (limiter === undefined){
         limiter = $(document)
     }
+    //Изменение логики на нажатие гамбургера в моб версии (1 кнопка для меню и для заказать звонок)
+    let width = $(window).width();
     $(document).on('click', '.menu__burger .hamburger', function(e){
-        let width = $(window).width();
         if (width <= 768) {
             if ($('.hamburger').hasClass('is-active') && $('.callback').hasClass('active')) {
                 e.preventDefault;
@@ -92,11 +93,19 @@ function allClics(limiter){
             };
         }
         let menu = $(this).parents('.menu');
+        let formMain = $(document).find('.callback');
+        formMain.find('.hamburger').removeClass('is-active');
+        formMain.removeClass('fadeInRight');
+        formMain.addClass('fadeOutRight');
+        $(document).find('.wrapper-disable').remove();
+        setTimeout(function(){
+            formMain.removeClass('active');
+        }, 300)
         $(this).toggleClass('is-active');
         if(menu.hasClass('active')){
             $(document).find('.wrapper-disable').remove();    
         } else {
-            $(document).find('.main-content').prepend('<div class="wrapper-disable"></div>')
+            $(document).find('.main-content').prepend('<div class="wrapper-disable"></div>');
         }
         menu.toggleClass('no-active active');
         menu.find('.menu__link span').toggle('slide');
@@ -111,13 +120,21 @@ function allClics(limiter){
             menu.find('.menu__link span').toggle('slide');
             menu.find('.menu-footer').toggle('slide');
             menu.addClass('no-active');   
-        } else {
-            
         }
-    })
+    });
     $(document).on('click', '.header-block__but', function(){
         let formMain = $(document).find('.callback');
+
+        $(document).find('.wrapper-disable').remove();
+        $('.menu').find('.hamburger').removeClass('is-active');
+        $('.menu').removeClass('active');
+        $('.menu').find('.menu__link span').hide();
+        $('.menu').find('.menu-footer').hide();
+        $('.menu').addClass('no-active');
+        $(document).find('.wrapper-disable').remove();
+
         if(formMain.hasClass('active')){
+            formMain.find('.hamburger').removeClass('is-active');
             formMain.removeClass('fadeInRight');
             formMain.addClass('fadeOutRight');
             $(document).find('.wrapper-disable').remove();
@@ -125,6 +142,11 @@ function allClics(limiter){
                 formMain.removeClass('active');
             }, 300)
         } else {
+            if (width <= 768) {
+                $('.menu').find('.hamburger').addClass('is-active');
+            } else {
+                formMain.find('.hamburger').addClass('is-active');
+            }
             formMain.removeClass('fadeOutRight');
             formMain.addClass('active fadeInRight');
             $(document).find('.main-content').prepend('<div class="wrapper-disable"></div>');
@@ -138,7 +160,7 @@ function allClics(limiter){
         $(document).find('.wrapper-disable').remove();
         setTimeout(function(){
             formMain.removeClass('active');
-        }, 1000)
+        }, 300)
     })
     $(document).on('click', '.bws-top-arrow', function(){
         $(this).parents('.bws').toggleClass('no-active');
@@ -149,6 +171,19 @@ function allClics(limiter){
         a.slick('slickPrev');
         return false;
     });
+   $(document).on('click', '.wrapper-disable', function(){
+        $('.menu').find('.hamburger').removeClass('is-active');
+        $('.menu').removeClass('active');
+        $('.menu').find('.menu__link span').hide();
+        $('.menu').find('.menu-footer').hide();
+        $('.menu').addClass('no-active');
+        $('.callback').removeClass('fadeInRight');
+        $('.callback').addClass('fadeOutRight');
+        setTimeout(function(){
+            $('.callback').removeClass('active');
+        }, 300)
+        $(document).find('.wrapper-disable').remove();
+   })
 }
 
 function sliders(limiter){
