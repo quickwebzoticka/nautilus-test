@@ -1146,14 +1146,15 @@ button {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
     .slick-dots li.slick-active button:before {
-      border: 2px solid transparent;
-      width: 10px;
-      height: 10px;
+      border: none;
+      width: 13px;
+      height: 13px;
       background: #e75300;
-      background: -webkit-gradient(linear, left top, right top, from(#e75300), to(#ec7e01));
-      background: -o-linear-gradient(left, #e75300 0%, #ec7e01 100%);
-      background: -webkit-linear-gradient(left, #e75300 0%, #ec7e01 100%);
-      background: linear-gradient(to right, #e75300 0%, #ec7e01 100%); }
+      background: -webkit-radial-gradient(left top, #e75300, #ec7e01);
+      background: -o-radial-gradient(left top, #e75300, #ec7e01);
+      background: radial-gradient(to right bottom, #e75300, #ec7e01);
+      -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+              box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); }
 
 body.fancybox-active {
   overflow: hidden; }
