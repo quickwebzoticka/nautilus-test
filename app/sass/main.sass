@@ -310,6 +310,51 @@ button
     margin-bottom: 40px
 
 
+.afterCallback
+  position: relative
+  overflow: visible
+  .block-radius__content
+    z-index: 2
+    position: relative
+  .block-radius__top
+    position: absolute
+    top: -30px
+    width: 100%
+    left: 0
+    height: 30px
+    width: -webkit-calc(100% - 60px)
+    width: calc(100% - 60px)
+    margin-left: 30px
+    background: #ede8da
+    -webkit-box-shadow: 0 -5px 6px rgba(0, 0, 0, 0.02)
+    box-shadow: 0 -5px 6px rgba(0, 0, 0, 0.02)
+    z-index: 2
+  .block-radius__bot
+    position: absolute
+    bottom: -30px
+    width: 100%
+    left: 0
+    height: 30px
+    width: -webkit-calc(100% - 60px)
+    width: calc(100% - 60px)
+    margin-left: 30px
+    background: #ede8da
+    z-index: 2
+  .block__angle-top-left, .block__angle-top-right, .block__angle-bot-left, .block__angle-bot-right
+    width: 30px
+    height: 30px
+    position: absolute
+  .block__angle-top-left, .block__angle-bot-left
+    left: -30px
+    fill: #ede8da
+  .block__angle-top-right, .block__angle-bot-right
+    right: -30px
+    fill: #ede8da
+  .fancybox-close-small
+    top: -30px
+    right: -60px
+
+
 .pre-footer-slider-item__desc
   position: relative
   .block-radius__content
@@ -5555,7 +5600,8 @@ li.fancybox-thumbs-loading
 .afterCallback
   max-width: 650px
   background: #ede8da
-  padding: 50px
+  padding: 20px 50px
+  position: relative
   .callback__title, .callback__text
     text-align: center
   .callback__main
@@ -5592,6 +5638,10 @@ li.fancybox-thumbs-loading
       flex: 1 1 100%
     &:nth-child(1)
       margin-right: 0
+
+  .afterCallback
+    .fancybox-close-small
+      right: -10px
 
 .first-slider
   border-bottom: 8px solid #ede8da
@@ -6233,8 +6283,8 @@ li.fancybox-thumbs-loading
     left: -40%
     &:after
       display: block
-    .bws-arrow__img
-    	transform: rotate(180deg)
+    .bws-arrow__img_arrow
+    	transform: rotate(180deg) translate(18%,-12%)
 
 @media screen and (max-width: 768px)
   .bws
@@ -6257,6 +6307,13 @@ li.fancybox-thumbs-loading
   top: 0
   z-index: 40
   transform: rotate(0deg)
+
+.bws-arrow__img_arrow
+  position: absolute
+  left: 0
+  top: 0
+  transform: rotate(0deg)
+  
 
 @media screen and (max-width: 768px)
   .bws-top-arrow
