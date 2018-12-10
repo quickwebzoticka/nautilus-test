@@ -334,7 +334,7 @@ button {
 
 .afterCallback {
   position: relative;
-  overflow: visible; }
+  overflow: visible !important; }
   .afterCallback .block-radius__content {
     z-index: 2;
     position: relative; }
