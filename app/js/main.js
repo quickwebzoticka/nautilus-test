@@ -240,6 +240,7 @@ function sliders(limiter){
         $(item).slick({
             vertical:true,
             arrows:false,
+            infinite: true,
             slidesToShow: 3,
             responsive: [
                 {
